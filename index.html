@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Document</title>
+</head>
+<body class="container">
+    <header class="header">
+        <div class="info__bar">
+            <div class="info__bar_level">
+                <img class="star__icon" src="img/star.png">
+                <p class="speed" id="speed"></p>
+            </div>
+            <div class="info__bar_points">
+                <p class="points" id="points"></p>
+            </div>
+            <div class="info__bar_lives">
+                <!-- <div class="info__bar_heart info__bar_dead"> -->
+                    <img class="health-icon" src="img/health.svg">
+                    <img class="death-icon" src="img/death.svg">
+                <!-- </div> -->
+                <!-- <div class="info__bar_heart info__bar_dead"> -->
+                    <img class="health-icon" src="img/health.svg">
+                    <img class="death-icon" src="img/death.svg">
+                <!-- </div> -->
+                <!-- <div class="info__bar_heart info__bar_dead"> -->
+                    <img class="health-icon" src="img/health.svg">
+                    <img class="death-icon" src="img/death.svg">
+                <!-- </div> -->
+            </div>
+        </div>
+        <div class="start__bar">
+            <button class="start__button" id="start__button">Начать</button>
+            <button class="question__button">?</button>
+        </div>
+    </header>
+    <main class="main">
+        <div class="game__zone">
+            <div class="ellipse"></div>
+            <div class="ellipse"></div>
+            <div class="ellipse"></div>
+            <div class="ellipse"></div>
+            <div class="ellipse"></div>
+        </div>
+    </main>
+    <div class="popup">
+        <div class="popup__header">
+            <p class="popup__title">Правила игры</p>
+        </div>
+        <ol class="popup__rules_text">
+            <li>В одной из 5-ти норок в случайном порядке периодически появляется мышь 🐭и другие emoji 🐭🐼🐻🦊🐱🐱...</li>
+            <li>Нужно поймать мышь. При клике по мыши игроку добавляется +10 очков.</li>
+            <li>После каждой пятой пойманной мыши скорость её случайного появления увеличивается.</li>
+            <li>Если клик был выполнен по другому emoji, то у игрока отнимается жизнь. Всего 3 жизни. Если жизни закончились, то игра останавливается.</li>
+        </ol>
+        <div class="popup__accept">
+            <button class="popup__accept_btn btn">Ок</button>
+        </div>
+    </div>
+    <div class="popup__game-over">
+        <div class="popup__header">
+            <p class="popup__title">Игра завершена</p>
+        </div>
+        <div class="popup__game-result">
+            <h1 class="popup__game-over_text" id="game-over">Поздравляем! Вы набрали:</h1>
+            <p>
+                <span class="points-counter" id="points-counter"></span>
+                <br><span class="points-over">очков</span>
+            </p>
+        </div>
+        <div class="popup__accept">
+            <button class="btn" id="popup__game-over_btn">Ок</button>
+        </div>
+    </div>
+    <script type="text/javascript" src="./script.js" charset="utf-8"></script>
+</body>
+</html>
+
