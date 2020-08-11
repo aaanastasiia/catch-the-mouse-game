@@ -134,7 +134,6 @@
     }
     
     startGame() {
-        console.log(this.timer);
         this.isRunning = true;
         this.createEmojiesArr ();
         this.setPoints ();
