@@ -1,5 +1,4 @@
-  
-class game {
+  class game {
     constructor() {
         this.score = 0;
         this.health = 3;
@@ -90,16 +89,15 @@ class game {
     }
 
     clickEmoji() {
-        this.timer = 1200;
         if (this.isMouse) {
             this.star.style.animation = 'none';
             this.pointsCounter += 10; 
                 if (this.pointsCounter % 50 === 0) {
                     this.star.style.animation = 'flash 1s ease-in-out';
                     this.speedCounter += 1;
-                    // this.timer = 1600 - (300 * this.speedCounter);
-                    console.log(this.speedCounter);
-                    this.createTimer();
+                    this.timer = 1600 - (300 * this.speedCounter);
+                    clearInterval(this.interval);
+                    this.startGame();
                 }
         }
         else {
@@ -116,22 +114,10 @@ class game {
             this.popupGameOver.classList.add('active');
             this.endGame();
         }
-        // this.interval = setInterval( () => this.createEmoji(), this.timer);
-        this.deleteElement();
         this.isMouse = false;
+        this.deleteElement();
         this.setPoints();
         this.setScore();
-    }
-
-    createTimer() {
-        console.log(this.timer);
-        if (this.pointsCounter % 50 === 0) {
-       this.timer = 1300 - (300 * this.speedCounter);
-        }
-        else {
-            this.timer;
-        }
-        console.log(this.timer);
     }
 
     healthFull() {
@@ -144,15 +130,15 @@ class game {
     }
     
     setScore () {
-        this.speed.innerHTML = this.speedCounter;
+        setTimeout(() => this.speed.innerHTML = this.speedCounter, 150);
     }
     
     startGame() {
+        console.log(this.timer);
         this.isRunning = true;
         this.createEmojiesArr ();
         this.setPoints ();
         this.setScore();
-        this.createTimer();
         this.interval = setInterval( () => this.createEmoji(), this.timer);
     }
 
